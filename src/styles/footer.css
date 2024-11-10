@@ -1,0 +1,29 @@
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-top: 1px solid white;
+  
+  h3 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  & a {
+    font-style: italic;
+    color: #fff;
+  }
+
+  & span {
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+  }
+}
+
