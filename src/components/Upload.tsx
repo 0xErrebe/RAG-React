@@ -5,8 +5,15 @@ import WebWorker from '../workers/WebWorker'
 import fileReaderWorker from '../workers/fileReader.worker?url'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { GlobalContext } from '../context/Global'
-import { MemoryVector, MemoryVectorStore } from 'langchain/vectorstores/memory';
+import { MemoryVectorStore } from 'langchain/vectorstores/memory';
 import { HuggingFaceTransformersEmbeddings } from '@langchain/community/embeddings/hf_transformers';
+
+interface MemoryVector {
+  content: string;
+  embedding: number[];
+  metadata: Record<string, unknown>;
+  id?: string;
+}
 
 export default function Upload() {
   const { setGlobalState } = useContext(GlobalContext)
@@ -14,7 +21,7 @@ export default function Upload() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const fileInput = useRef<HTMLInputElement>(null)
-  
+
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     setError('')
