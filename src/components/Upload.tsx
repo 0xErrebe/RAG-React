@@ -1,4 +1,4 @@
-import '../styles/Upload.css'
+import '../styles/upload.css'
 import SvgContainer from './SvgContainer';
 import Loading from '../assets/loading.svg'
 import WebWorker from '../workers/WebWorker'
