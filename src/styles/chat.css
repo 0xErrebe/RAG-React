@@ -24,16 +24,20 @@
     overflow-y: scroll;
     box-sizing: border-box;
     scroll-behavior: smooth;
-
+    
     &::-webkit-scrollbar {
       width: 8px;
     }
-
+    
     &::-webkit-scrollbar-thumb {
       background-color: #222;
       border-radius: 1rem;
     }
     
+    &.hideScroll::-webkit-scrollbar-thumb {
+      background-color: transparent
+    }
+
     & .loading {
       background-color: gray;
       border-radius: 0.5rem;
@@ -47,6 +51,7 @@
       flex-direction: column;
       gap: 0.5rem;
       text-align: justify;
+      min-height: 500px;
       
       & p {
         line-height: 1.5rem;

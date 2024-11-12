@@ -84,7 +84,7 @@ export default function Upload() {
     return () => {
       worker.terminate()
     }
-  }, [file])
+  }, [file, setGlobalState])
 
   return (
     <section className='dropzone' onDrop={handleDrop} onDragOver={e => e.preventDefault()}>

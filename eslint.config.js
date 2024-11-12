@@ -25,7 +25,6 @@ export default tseslint.config(
       ],
       "quotes": ["error", "single"],
       "indent": ["warn", 2],
-      "unused-imports/no-unused-imports": "warn",
     },
   },
 )

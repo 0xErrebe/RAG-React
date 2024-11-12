@@ -10,7 +10,7 @@ function Modal() {
 }
 
 interface GPU extends Navigator {
-  gpu?: any
+  gpu?: unknown
 }
 
 interface Props {

@@ -8,11 +8,11 @@ import { env } from '@xenova/transformers';
 env.allowLocalModels = false;
 
 self.addEventListener('message', async (event: MessageEvent<{file: File}>) => {
-  console.warn("Worker received message", event.data);
+  console.warn('Worker received message', event.data);
   if (!event.data.file) return
   const { file } = event.data
 
-  let fileData: Document<Record<string, any>>[] = []
+  let fileData: Document[] = []
 
   if (file.type.includes('pdf')) {
     for (const page of await getPDFData(file)) {

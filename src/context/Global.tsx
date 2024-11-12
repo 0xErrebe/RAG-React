@@ -18,7 +18,6 @@ export const GlobalContext = createContext<AppContext>({} as AppContext)
 
 export const GlobalProvider = ({children}: {children: React.ReactNode}) => {
   const [globalState, setGlobalState] = useState<AppState>({
-    // mode: 'chat',
     mode: 'upload',
     loading: false,
     retriever: null,
