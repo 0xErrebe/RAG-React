@@ -1,8 +1,7 @@
 import '../styles/upload.css'
 import SvgContainer from './SvgContainer';
 import Loading from '../assets/loading.svg'
-import WebWorker from '../workers/WebWorker'
-import fileReaderWorker from '../workers/fileReader.worker?url'
+import fileReaderWorker from '../workers/fileReader.worker?worker'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { GlobalContext } from '../context/Global'
 import { MemoryVectorStore } from 'langchain/vectorstores/memory';
@@ -70,7 +69,8 @@ export default function Upload() {
     
     setLoading(true)
 
-    const worker = new WebWorker(fileReaderWorker) as Worker
+    const worker = new fileReaderWorker()
+
     worker.postMessage({ file })
     worker.onmessage = (event) => {
       if (!event.data.vectors) return
